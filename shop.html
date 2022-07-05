@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Williams Blommor - Sortiment</title>
+    <title>Lilla Hällen - Sortiment</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -27,26 +27,6 @@ https://templatemo.com/tm-559-zay-shop
 </head>
 
 <body>
-    <!-- Start Top Nav -->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
-        <div class="container text-light">
-            <div class="w-100 d-flex justify-content-between">
-                <div>
-                    <i class="fa fa-envelope mx-2"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info@company.com">info@company.com</a>
-                    <i class="fa fa-phone mx-2"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
-                </div>
-                <div>
-                    <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
-                    <a class="text-light" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
-                    <a class="text-light" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter fa-sm fa-fw me-2"></i></a>
-                    <a class="text-light" href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin fa-sm fa-fw"></i></a>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <!-- Close Top Nav -->
 
 
     <!-- Header -->
@@ -54,7 +34,7 @@ https://templatemo.com/tm-559-zay-shop
         <div class="container d-flex justify-content-between align-items-center">
 
             <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
-                Giegolds Blommor
+                Lilla Hällen
             </a>
 
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,7 +51,7 @@ https://templatemo.com/tm-559-zay-shop
                             <a class="nav-link" href="shop.html">Sortiment</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Kontakt</a>
+                            <a class="nav-link" href="contact.html">Handla</a>
                         </li>
                     </ul>
                 </div>
@@ -88,7 +68,6 @@ https://templatemo.com/tm-559-zay-shop
                         <i class="fa fa-fw fa-search text-dark mr-2"></i>
                     </a>
                     
-                    
                 </div>
             </div>
 
@@ -104,10 +83,51 @@ https://templatemo.com/tm-559-zay-shop
             </div>
             <form action="" method="get" class="modal-content modal-body border-0 p-0">
                 <div class="input-group mb-2">
-                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
-                    <button type="submit" class="input-group-text bg-success text-light">
-                        <i class="fa fa-fw fa-search text-white"></i>
-                    </button>
+                    <form name="jksearch" action="http://www.google.com/search" method="get" onSubmit="jksitesearch(this)">
+
+                        <p>Search JavaScript Kit:<br />
+                        <input id="hiddenquery" type="hidden" name="q" />
+                        <input name="qfront" type="text" style="width: 200px" placeholder="navigator object" /> <input type="submit" value="Search" /><br />
+                        <div style="font: bold 11px Verdana;">Google:<input name="se" type="radio" checked>  Yahoo:<input name="se" type="radio">  MSN:<input name="se" type="radio">
+                        </div>
+                        
+                        <script type="text/javascript">
+                        
+                        // All-in-one Internal Site Search script- By JavaScriptKit.com (http://www.javascriptkit.com)
+                        // For this and over 400+ free scripts, visit JavaScript Kit- http://www.javascriptkit.com/
+                        // This notice must stay intact for use
+                        
+                        //Enter domain of site to search.
+                        var domainroot="www.javascriptkit.com"
+                        
+                        var searchaction=[ //form action for the 3 search engines
+                        "http://www.google.com/search",
+                        "http://search.yahoo.com/search",
+                        "http://search.msn.com/results.aspx"
+                        ]
+                        
+                        var queryfieldname=["q","p","q"] //name of hidden query form for the 3 search engines
+                        
+                        function switchaction(cur, index){
+                        cur.form.action=searchaction[index]
+                        document.getElementById("hiddenquery").name=queryfieldname[index]
+                        }
+                        
+                        function jksitesearch(curobj){
+                        for (i=0; i< document.jksearch.se.length; i++){ //loop through radio to see which is checked
+                        if (document.jksearch.se[i].checked==true)
+                        switchaction(document.jksearch.se[i], i)
+                        }
+                        document.getElementById("hiddenquery").value="site:"+domainroot+" "+curobj.qfront.value
+                        }
+                        
+                        
+                        </script>
+                        
+                        </p>
+                        
+                        </form>
+                        
                 </div>
             </form>
         </div>
@@ -115,302 +135,1011 @@ https://templatemo.com/tm-559-zay-shop
 
 
 
-    <!-- Start Content -->
-    <div class="container py-5">
-        <div class="row">
+        <!-- Start Content -->
+        <div class="container py-5">
+            <div class="row">
 
-            <div class="col-lg-3">
-                <h1 class="h2 pb-4">Produktkategorier</h1>
-                <ul class="list-unstyled templatemo-accordion">
-                    <li class="pb-3">
-                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="shop.html">
-                            Typer
-                            <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
-                        </a>
-                        <ul id="collapseThree" class="collapse list-unstyled pl-3">
-                            <li><a class="text-decoration-none" href="#">Bag</a></li>
-                            <li><a class="text-decoration-none" href="#">Sweather</a></li>
-                            <li><a class="text-decoration-none" href="#">Sunglass</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="col-lg-9">
-                <div class="row">
-                    <div class="col-md-6">
-                        <ul class="list-inline shop-top-menu pb-3 pt-1">
-                
-                        </ul>
-                    </div>
-                    <div class="col-md-6 pb-4">
-                        <div class="d-flex">
-                            <select class="form-control">
-                                <option>Featured</option>
-                                <option>A to Z</option>
-                                <option>Item</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card mb-4 product-wap rounded-0">
-                            <div class="card rounded-0">
-                                <img class="card-img rounded-0 img-fluid" src="assets\img\Kinesisk klockviva( cortusa matthioli).jpg">
-                            </div>
-
-                            <div class="card-body">
-                                <a class="h3 text-decoration-none">Kinesisk klockviva</a>
-                        
-                                <p class="text-center mb-0">$250.00 per brätte</p>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 product-wap rounded-0">
-                            <div class="card rounded-0">
-                                <img class="card-img rounded-0 img-fluid" src="assets\img\lewisia-twedyi(Alba).jpg">
-                            </div>
-
-                            <div class="card-body">
-                                <a class="h3 text-decoration-none">lewisia twedyi (Alba)</a>
-                        
-                                <p class="text-center mb-0">$250.00 per brätte</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 product-wap rounded-0">
-                            <div class="card rounded-0">
-                                <img class="card-img rounded-0 img-fluid" src="assets\img\Aquilegia canadensis (Little Lanterns).jpg">
-                            </div>
-
-                            <div class="card-body">
-                                <a class="h3 text-decoration-none">Aquilegia canadensis (Little Lanterns)</a>
-                        
-                                <p class="text-center mb-0">$250.00 per brätte</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 product-wap rounded-0">
-                            <div class="card rounded-0">
-                                <img class="card-img rounded-0 img-fluid" src="assets\img\Dagöga ( Heliopsis helianthoides var. scabra ’Bleeding Hearts’.jpg">
-                            </div>
-
-                            <div class="card-body">
-                                <a class="h3 text-decoration-none">Dagöga ( Heliopsis helianthoides var. scabra ’Bleeding Hearts’</a>
-                        
-                                <p class="text-center mb-0">$250.00 per brätte</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-4">
-                        <div class="card mb-4 product-wap rounded-0">
-                            <div class="card rounded-0">
-                                <img class="card-img rounded-0 img-fluid" src="assets\img\Lewisia-twedyi'Lovedream'.jpg">
-                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                                    <ul class="list-unstyled">
-                                        <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <a href="shop-single.html" class="h3 text-decoration-none">Lewisia twedyi 'Lovedream'</a>
-                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
-                                    <li class="pt-2">
-                                        <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
-                                        <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
-                                        <span class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
-                                        <span class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
-                                        <span class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
-                                    </li>
-                                </ul>
-                                <ul class="list-unstyled d-flex justify-content-center mb-1">
-                                </ul>
-                                <p class="text-center mb-0">$250.00</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 product-wap rounded-0">
-                            <div class="card rounded-0">
-                                <img class="card-img rounded-0 img-fluid" src="assets\img\Primula juliae Wanda.jpg">
-                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                                    <ul class="list-unstyled">
-                                        <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <a href="shop-single.html" class="h3 text-decoration-none">Primula juliae Wanda</a>
-                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
-                                    <li class="pt-2">
-                                        <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
-                                        <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
-                                        <span class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
-                                        <span class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
-                                        <span class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
-                                    </li>
-                                </ul>
-                                <ul class="list-unstyled d-flex justify-content-center mb-1">
-                                </ul>
-                                <p class="text-center mb-0">$250.00</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 product-wap rounded-0">
-                            <div class="card rounded-0">
-                                <img class="card-img rounded-0 img-fluid" src="assets\img\Rosenbräcka (saxifraga x arendsii).jpg">
-                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                                    <ul class="list-unstyled">
-                                        <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <a href="shop-single.html" class="h3 text-decoration-none">Rosenbräcka (saxifraga x arendsii)</a>
-                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
-                                    <li class="pt-2">
-                                        <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
-                                        <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
-                                        <span class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
-                                        <span class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
-                                        <span class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
-                                    </li>
-                                </ul>
-                                <ul class="list-unstyled d-flex justify-content-center mb-1">
-                                </ul>
-                                <p class="text-center mb-0">$250.00</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 product-wap rounded-0">
-                            <div class="card rounded-0">
-                                <img class="card-img rounded-0 img-fluid" src="assets\img\Rosenviva ( Primula rosea ’Grandiflora’).jpg">
-                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                                    <ul class="list-unstyled">
-                                        <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <a href="shop-single.html" class="h3 text-decoration-none">Rosenviva ( Primula rosea ’Grandiflora’)</a>
-                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
-                                    <li class="pt-2">
-                                        <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
-                                        <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
-                                        <span class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
-                                        <span class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
-                                        <span class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
-                                    </li>
-                                </ul>
-                                <ul class="list-unstyled d-flex justify-content-center mb-1">
-                                </ul>
-                                <p class="text-center mb-0">$250.00</p>
-                            </div>
-                        </div>
-                    </div>
-                <div div="row">
-                    <ul class="pagination pagination-lg justify-content-end">
-                        <li class="page-item disabled">
-                            <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" href="#" tabindex="-1">1</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark" href="#">2</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link rounded-0 shadow-sm border-top-0 border-left-0 text-dark" href="#">3</a>
+                <div class="col-lg-3">
+                    <h1 class="h2 pb-4">Produktkategorier</h1>
+                    <ul class="list-unstyled templatemo-accordion">
+                        <li class="pb-3">
+                            <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="shop.html">
+                                Typer
+                                <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
+                            </a>
+                            <ul id="collapseThree" class="collapse list-unstyled pl-3">
+                                <li><a class="text-decoration-none" href="#">Grön</a></li>
+                                <li><a class="text-decoration-none" href="#">blå</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
+
+                <div class="col-lg-9">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="assets\img\Kinesisk klockviva( cortusa matthioli).jpg">
+                                </div>
+
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Kinesisk klockviva</a>
+                            
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="assets\img\lewisia-twedyi(Alba).jpg">
+                                </div>
+
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">lewisia twedyi (Alba)</a>
+                            
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="assets\img\Aquilegia canadensis (Little Lanterns).jpg">
+                                </div>
+
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Aquilegia canadensis (Little Lanterns)</a>
+                            
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="assets\img\Dagöga ( Heliopsis helianthoides var. scabra ’Bleeding Hearts’.jpg">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Dagöga ( Heliopsis helianthoides var. scabra ’Bleeding Hearts’</a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="assets\img\Lewisia-twedyi'Lovedream'.jpg">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Lewisia twedyi 'Lovedream'</a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="assets\img\Primula juliae Wanda.jpg">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Primula juliae Wanda</a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="assets\img\Rosenbräcka (saxifraga x arendsii).jpg">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Rosenbräcka (saxifraga x arendsii)</a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="assets\img\Rosenviva ( Primula rosea ’Grandiflora’).jpg">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Rosenviva ( Primula rosea ’Grandiflora’)</a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="assets\img\liten såpnejlika Saponaria ocymoides.jpg">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">liten såpnejlika Saponaria ocymoides</a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="assets\img\Mattslöja Gypsophila cerastioides.jpg">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Mattslöja Gypsophila cerastioides</a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="assets\img\Backnejlika (Dianthus deltioides ’Brilliant’).jpg">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Backnejlika (Dianthus deltioides ’Brilliant’)</a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="assets\img\Murklocka (Campanula portenschlagiana).jpg">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Murklocka (Campanula portenschlagiana)</a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="assets\img\Taklök mix (Sempervivum mix).jpg">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Taklök mix (Sempervivum mix)</a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte med 24 st. 100.00 kr per brätte med 15 st</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Trädgårdsjättevallmo ( Papaver orientale-Hybrid 
+                                        'Royal Wedding’ )
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Ängsnäva ( Geranium pratense ’Dark Reiter’)
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Blodnäva (Geranium sanguineum)
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Knippgentiana (Gentiana asclepiadea var. alba )
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Knippgentiana (Gentiana asclepiadea ’Pink Swallow’ )
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Knippgentiana (Gentiana asclepiadea )
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Praktnejlikrot (GEUM chiloense 'BlazingSunset')
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Nejlikrot (GEUM coccineum 'Koi')
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Fläckflockel (EUPATORIUM maculatum 'Atropurpureum’ )
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Blek Solhatt (Echinacea pallida ’Hula Dancer’)
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Nejlika (Dianthus pavonius)
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Backnejlika (Dianthus deltioides ’Arctic Fire’ )
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Backnejlika (Dianthus deltioides ’Albus’ )
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Bergenia (Bergenia cordifolia ’Winterglut’ )
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Hjärtbergenia ( Bergenia cordifolia)
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Flikanemon ( Anemone multifida ’Rubra’)
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Jättedaggkåpa ( Alchemilla mollis ’Select’ )
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Rödskaftad daggkåpa ( Alchemilla erythropoda) 
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Taggpimpinell (Acaena inermis ’Purpurea’ )
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Fransk trift (ARMERIA pseudarmeria Ballerina-Series 'Ballerina Red')
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Trift (ARMERIA maritima 'Morning Star White')
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Trift (ARMERIA maritima 'Morning Star Deep Pink')
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Akleja (AQUILEGIA flabellata Spring Magic-Series 'Spring Magic Light-Red-Yellow’)
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Japansk akleja (AQUILEGIA flabellata Cameo-Series 'Cameo Softpink')
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Japansk akleja (AQUILEGIA flabellata Cameo-Series 'Cameo Pink-White')
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Akleja (AQUILEGIA canadensis 'Pink Lanterns')
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Akleja (AQUILEGIA Caerulea-Hybr. 'Red Hobbit')
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Tovsippa (Anemone sylvestris )
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Vit solhatt (Echinacea purpurea ’Alba’
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Röd solhatt (Echinacea purpurea ’Magnus Superior’)
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Backsippa (Pulsatilla vulgaris ’Rote Glocke’)
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Backsippa (Pulsatilla vulgaris)
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Japansk viva (Primula japonica ’Millers Crimson’ )
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Bollviva (Primula denticulata ’Rubin Selection’)
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Bollviva (Primula denticulata var. alba ’Weibe Auslese’)
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Bollviva (Primula denticulata ’Blue Selection’)
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Viva (Primula cortusoides hort. )
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Viva (PRIMULA Wanda-Hybr. (Orig. Niederlenz) 'Wanda Velvet Red Shades')
+                                        
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Viva (PRIMULA Wanda-Hybr. (Orig. Niederlenz) 'Wanda Blue Shades')
+                                        
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Viva (PRIMULA Wanda-Hybr. (Orig. Niederlenz) 'Wanda White')
+                                        
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Bergnepeta (Nepeta racemosa ’Felix’)
+                                        
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Temynta (Monarda didyma)
+                                        
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Student nejlika (Lychnis chalcedonica ’Rauhreif’)
+                                        
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Student nejlika (Lychnis chalcedonica)
+                                        
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Grekvädd (Knautia macedonica ’Mars midget’)
+                                        
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Liten såpnejlika ( saponaria ocymoides ’Snow Tip’ )
+                                        
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Höstglim ( silene schafta ’Splendens’ )
+                                        
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Lamöron ( stachys byzantina)
+                                        
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Stäppsalvia ( Salvia nemorosa’Merleau White’ )
+                                        
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Stäppsalvia ( Salvia nemorosa ’Merleau Rose’ )
+                                        
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Stäppsalvia (Salvia nemorosa ’Merleau ’Blue’  Stäppsalvia (Salvia nemorosa ’Rosakönigin’)
+                                        
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Ängssalvia ( Salvia pratensis Ballet-Series ’Sweet Esmeralda’)
+                                        
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Ängssalvia (Salvia pratensis Ballet-Series ’Twilight Serenade’ )
+                                        
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                                    <img class="card-img rounded-0 img-fluid" src="">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a class="h3 text-decoration-none">Ängssalvia ( salvia pratensis Ballet-Series ’Swan Lake’ )
+                                        </a>
+                                    
+                                    <p class="text-center mb-0">250.00 kr per brätte</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    <div div="row">
+                        <ul class="pagination pagination-lg justify-content-end">
+                            <li class="page-item disabled">
+                                <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" href="#" tabindex="-1">1</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark" href="#">2</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link rounded-0 shadow-sm border-top-0 border-left-0 text-dark" href="#">3</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
-
         </div>
+        <!-- End Content -->
+
     </div>
-    <!-- End Content -->
-
-
     <!-- Start Footer -->
     <footer class="bg-dark" id="tempaltemo_footer">
         <div class="container">
             <div class="row">
 
                 <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">Zay Shop</h2>
+                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">Lilla Hällen</h2>
                     <ul class="list-unstyled text-light footer-link-list">
                         <li>
                             <i class="fas fa-map-marker-alt fa-fw"></i>
-                            123 Consectetur at ligula 10660
-                        </li>
-                        <li>
-                            <i class="fa fa-phone fa-fw"></i>
-                            <a class="text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
+                            Lilla Hällen 1, <br>
+                            Jönåker, Sverige
                         </li>
                         <li>
                             <i class="fa fa-envelope fa-fw"></i>
                             <a class="text-decoration-none" href="mailto:info@company.com">info@company.com</a>
                         </li>
                     </ul>
-                </div>
-
-                <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-light border-bottom pb-3 border-light">Products</h2>
-                    <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="#">Luxury</a></li>
-                        <li><a class="text-decoration-none" href="#">Sport Wear</a></li>
-                        <li><a class="text-decoration-none" href="#">Men's Shoes</a></li>
-                        <li><a class="text-decoration-none" href="#">Women's Shoes</a></li>
-                        <li><a class="text-decoration-none" href="#">Popular Dress</a></li>
-                        <li><a class="text-decoration-none" href="#">Gym Accessories</a></li>
-                        <li><a class="text-decoration-none" href="#">Sport Shoes</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
-                    <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="#">About Us</a></li>
-                        <li><a class="text-decoration-none" href="#">Shop Locations</a></li>
-                        <li><a class="text-decoration-none" href="#">FAQs</a></li>
-                        <li><a class="text-decoration-none" href="#">Contact</a></li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <div class="row text-light mb-4">
-                <div class="col-12 mb-3">
-                    <div class="w-100 my-3 border-top border-light"></div>
-                </div>
-                <div class="col-auto me-auto">
-                    <ul class="list-inline text-left footer-icons">
-                        <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank" href="http://facebook.com/"><i class="fab fa-facebook-f fa-lg fa-fw"></i></a>
-                        </li>
-                        <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
-                        </li>
-                        <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/"><i class="fab fa-twitter fa-lg fa-fw"></i></a>
-                        </li>
-                        <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank" href="https://www.linkedin.com/"><i class="fab fa-linkedin fa-lg fa-fw"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-auto">
-                    <label class="sr-only" for="subscribeEmail">Email address</label>
-                    <div class="input-group mb-2">
-                        <input type="text" class="form-control bg-dark border-light" id="subscribeEmail" placeholder="Email address">
-                        <div class="input-group-text btn-success text-light">Subscribe</div>
-                    </div>
                 </div>
             </div>
         </div>
