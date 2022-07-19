@@ -64,8 +64,61 @@ https://templatemo.com/tm-559-zay-shop
                             </div>
                         </div>
                     </div>
-                    <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
-                        <i class="fa fa-fw fa-search text-dark mr-2"></i>
+                    <a class="nav-icon d-none d-lg-inline">
+                        <form name="f1" onSubmit="if(this.t1.value!=null && this.t1.value!='') findString(this.t1.value);return false">
+                            <div class="input-group mb-2">
+                            <input type="text" class="form-control" placeholder="Sök..." name=t1 value="">
+                            <button type="submit" name=b1 class="input-group-text bg-success text-light">
+                                <i class="fa fa-fw fa-search text-white"></i>
+                            </button>
+                            </div>
+                            
+                            <script language="JavaScript">
+                                
+                                var TRange=null;
+                                function findString (str) {
+                                 if (parseInt(navigator.appVersion)<4) return;
+                                 var strFound;
+                                 if (window.find) {
+                                
+                                  // CODE FOR BROWSERS THAT SUPPORT window.find
+                                  strFound=self.find(str);
+                                  if (strFound && self.getSelection && !self.getSelection().anchorNode) {
+                                   strFound=self.find(str)
+                                  }
+                                  if (!strFound) {
+                                   strFound=self.find(str,0,1)
+                                   while (self.find(str,0,1)) continue
+                                  }
+                                 }
+                                 else if (navigator.appName.indexOf("Microsoft")!=-1) {
+                                
+                                  // EXPLORER-SPECIFIC CODE
+                                
+                                  if (TRange!=null) {
+                                   TRange.collapse(false)
+                                   strFound=TRange.findText(str)
+                                   if (strFound) TRange.select()
+                                  }
+                                  if (TRange==null || strFound==0) {
+                                   TRange=self.document.body.createTextRange()
+                                   strFound=TRange.findText(str)
+                                   if (strFound) TRange.select()
+                                  }
+                                 }
+                                 else if (navigator.appName=="Opera") {
+                                  alert ("Opera browsers not supported, sorry...")
+                                  return;
+                                 }
+                                 if (!strFound) alert ("String '"+str+"' not found!")
+                                 return;
+                                }
+                                
+                                </script>
+                            
+                            </p>
+                            
+                        </form>
                     </a>
                     
                 </div>
@@ -75,98 +128,29 @@ https://templatemo.com/tm-559-zay-shop
     </nav>
     <!-- Close Header -->
 
-    <!-- Modal -->
-    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="w-100 pt-1 mb-5 text-right">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="assets\img\Ej i lager.png" method="get" class="modal-content modal-body border-0 p-0">
-                <div class="input-group mb-2">
-                    <form name="jksearch" action="http://www.google.com/search" method="get" onSubmit="jksitesearch(this)">
-
-                        <p>Search JavaScript Kit:<br />
-                        <input id="hiddenquery" type="hidden" name="q" />
-                        <input name="qfront" type="text" style="width: 200px" placeholder="navigator object" /> <input type="submit" value="Search" /><br />
-                        <div style="font: bold 11px Verdana;">Google:<input name="se" type="radio" checked>  Yahoo:<input name="se" type="radio">  MSN:<input name="se" type="radio">
-                        </div>
-                        
-                        <script type="text/javascript">
-                        
-                        // All-in-one Internal Site Search script- By JavaScriptKit.com (http://www.javascriptkit.com)
-                        // For this and over 400+ free scripts, visit JavaScript Kit- http://www.javascriptkit.com/
-                        // This notice must stay intact for use
-                        
-                        //Enter domain of site to search.
-                        var domainroot="https://jonte1346.github.io/Giegolds-Blommor/shop.html"
-                        
-                        var searchaction=[ //form action for the 3 search engines
-                        "http://www.google.com/search",
-                        "http://search.yahoo.com/search",
-                        "http://search.msn.com/results.aspx"
-                        ]
-                        
-                        var queryfieldname=["q","p","q"] //name of hidden query form for the 3 search engines
-                        
-                        function switchaction(cur, index){
-                        cur.form.action=searchaction[index]
-                        document.getElementById("hiddenquery").name=queryfieldname[index]
-                        }
-                        
-                        function jksitesearch(curobj){
-                        for (i=0; i< document.jksearch.se.length; i++){ //loop through radio to see which is checked
-                        if (document.jksearch.se[i].checked==true)
-                        switchaction(document.jksearch.se[i], i)
-                        }
-                        document.getElementById("hiddenquery").value="site:"+domainroot+" "+curobj.qfront.value
-                        }
-                        
-                        
-                        </script>
-                        
-                        </p>
-                        
-                        </form>
-                        
-                </div>
-            </form>
-        </div>
-    </div>
-
 
 
         <!-- Start Content -->
         <div class="container py-5">
             <div class="row">
-
-                <div class="col-lg-3">
-                    <h1 class="h2 pb-4">Produktkategorier</h1>
-                    <ul class="list-unstyled templatemo-accordion">
-                        <li class="pb-3">
-                            <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="shop.html">
-                                Typer
-                                <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
-                            </a>
-                            <ul id="collapseThree" class="collapse list-unstyled pl-3">
-                                <li><a class="text-decoration-none" href="#">Grön</a></li>
-                                <li><a class="text-decoration-none" href="#">blå</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-
                 <div class="col-lg-9">
                     <div class="row">
                         <div class="col-md-4">
                             <div class="card mb-4 product-wap rounded-0">
                                 <div class="card rounded-0">
-                                    <img class="card-img rounded-0 img-fluid" src="assets\img\Kinesisk klockviva( cortusa matthioli).jpg">
+                                    <a href="Kinesisk klockviva.html">
+                                    <img  class="card-img rounded-0 img-fluid" src="assets\img\Kinesisk klockviva( cortusa matthioli).jpg">
+                                </a>
                                 </div>
 
                                 <div class="card-body">
                                     <a class="h3 text-decoration-none">Kinesisk klockviva</a>
-                            
                                     <p class="text-center mb-0">250.00 kr per brätte</p>
+
+                                    <div id="view-details">
+                                        <h3>Detaljer:</h3>
+                                        <p>rosa</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -180,6 +164,31 @@ https://templatemo.com/tm-559-zay-shop
                                     <a class="h3 text-decoration-none">lewisia twedyi (Alba)</a>
                             
                                     <p class="text-center mb-0">250.00 kr per brätte</p>
+
+                                    <div id="view-details">
+                                        <h3>Detaljer:</h3>
+                                        <h6>Description:</h6>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse. Donec condimentum elementum convallis. Nunc sed orci a diam ultrices aliquet interdum quis nulla.</p>
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <h6>Avaliable Color :</h6>
+                                </li>
+                                <li class="list-inline-item">
+                                    <p class="text-muted"><strong>White / Black</strong></p>
+                                </li>
+                            </ul>
+
+                            <h6>Specification:</h6>
+                            <ul class="list-unstyled pb-3">
+                                <li>Lorem ipsum dolor sit</li>
+                                <li>Amet, consectetur</li>
+                                <li>Adipiscing elit,set</li>
+                                <li>Duis aute irure</li>
+                                <li>Ut enim ad minim</li>
+                                <li>Dolore magna aliqua</li>
+                                <li>Excepteur sint</li>
+                            </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -193,6 +202,11 @@ https://templatemo.com/tm-559-zay-shop
                                     <a class="h3 text-decoration-none">Aquilegia canadensis (Little Lanterns)</a>
                             
                                     <p class="text-center mb-0">250.00 kr per brätte</p>
+
+                                    <div id="view-details">
+                                        <h3>Detaljer:</h3>
+                                        <p>röd</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
