@@ -57,12 +57,15 @@ https://templatemo.com/tm-559-zay-shop
                 </div>
                 <div class="navbar align-self-center d-flex">
                     <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+                        <form name="f1" onSubmit="if(this.t1.value!=null && this.t1.value!='') findString(this.t1.value);return false">
                         <div class="input-group">
-                            <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
-                            <div class="input-group-text">
-                                <i class="fa fa-fw fa-search"></i>
-                            </div>
+                            <input type="text" class="form-control" id="inputMobileSearch" placeholder="Sök..." name=t1 value="">
+                            <button type="submit" name=b1 class="input-group-text bg-success text-light">
+                                <i class="fa fa-fw fa-search text-white"></i>
+                            </button>
                         </div>
+                            
+                        </form>
                     </div>
                     <a class="nav-icon d-none d-lg-inline">
                         <form name="f1" onSubmit="if(this.t1.value!=null && this.t1.value!='') findString(this.t1.value);return false">
@@ -116,7 +119,7 @@ https://templatemo.com/tm-559-zay-shop
                                 
                                 </script>
                             
-                            </p>
+                            
                             
                         </form>
                     </a>
@@ -138,9 +141,7 @@ https://templatemo.com/tm-559-zay-shop
                         <div class="col-md-4">
                             <div class="card mb-4 product-wap rounded-0">
                                 <div class="card rounded-0">
-                                    <a href="Kinesisk klockviva.html">
                                     <img  class="card-img rounded-0 img-fluid" src="assets\img\Kinesisk klockviva( cortusa matthioli).jpg">
-                                </a>
                                 </div>
 
                                 <div class="card-body">
